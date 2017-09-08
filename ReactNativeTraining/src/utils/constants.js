@@ -26,3 +26,18 @@ exports.contacts = [
     message: 'toca timbre que no tengo el celular encima'
   }
 ];
+
+exports.groups = [
+  {
+    avatar:
+      'http://cdn.ciudad.com.ar/sites/default/files/styles/ciu_nota_slider_contenido_hd/public/files_drupal_6/2013/04/17/casados_con_hijos_maldicion.jpg?itok=-B6kGw_-',
+    username: 'Futbol !!',
+    id: 1
+  },
+  {
+    avatar:
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZb3XJtzg2sCKZ4iyQKwuBv6cdegBd7gfjeTZjoUv8BNuViqvjHw',
+    username: 'Los Pi',
+    id: 2
+  }
+];

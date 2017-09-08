@@ -37,9 +37,11 @@
     "native-base": "^2.3.1",
     "react": "16.0.0-alpha.12",
     "react-native": "^0.47.0",
+    "react-native-button": "^2.1.0",
     "react-native-elements": "^0.16.0",
     "react-native-scripts": "^1.3.1",
-    "react-navigation": "^1.0.0-beta.11"
+    "react-native-shadow": "^1.2.1",
+    "react-native-tab-view": "^0.0.69"
   },
   "rnpm": {
     "assets": [
