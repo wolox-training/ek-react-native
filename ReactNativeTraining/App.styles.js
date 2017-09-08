@@ -1,4 +1,7 @@
 import { StyleSheet } from 'react-native';
+import { grey1, grey2 } from './src/utils/colors';
+
+const size = 40;
 
 export default StyleSheet.create({
   container: {
@@ -6,31 +9,30 @@ export default StyleSheet.create({
     justifyContent: 'flex-start',
     margin: 30
   },
-
   contact: {
+    marginBottom: 15
+  },
+  description: {
     flexDirection: 'row',
     justifyContent: 'flex-start',
     marginBottom: 10
   },
-
+  texts: { flex: 1 },
   greyLine: {
-    borderBottomColor: '#D5D5D5',
+    borderBottomColor: grey1,
     borderBottomWidth: 0.7
   },
-
   image: {
     borderRadius: 15,
-    height: 40,
-    marginRight: 10,
-    width: 40
+    height: size,
+    marginRight: 20,
+    width: size
   },
-
   name: {
     fontSize: 15
   },
-
   message: {
-    color: '#C0C0C0',
+    color: grey2,
     flex: 1,
     fontSize: 13
   }

@@ -38,12 +38,10 @@ const contacts = [
 const App = () => (
   <View style={styles.container}>
     {contacts.map(contact => (
-      <View key={contact.id} style={{ marginBottom: 15 }}>
-        <View style={styles.contact}>
-          <View style={{ marginRight: 20 }}>
-            <Image style={styles.image} source={{ uri: contact.avatar }} />
-          </View>
-          <View style={{ flex: 1 }}>
+      <View key={contact.id} style={styles.contact}>
+        <View style={styles.description}>
+          <Image style={styles.image} source={{ uri: contact.avatar }} />
+          <View style={styles.texts}>
             <Text style={styles.name}>{contact.username}</Text>
             <Text numberOfLines={1} style={styles.message}>
               {messages[contact.id - 1]}
