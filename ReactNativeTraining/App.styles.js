@@ -1,13 +1,13 @@
 import { StyleSheet } from 'react-native';
-import { grey1, grey2 } from './src/utils/colors';
 
-const size = 40;
+import { grey1, grey2 } from './src/utils/colors';
 
 export default StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'flex-start',
-    margin: 30
+    margin: 30,
+    borderTopWidth: 0,
+    borderBottomWidth: 0
   },
   contact: {
     marginBottom: 15
@@ -20,20 +20,22 @@ export default StyleSheet.create({
   texts: { flex: 1 },
   greyLine: {
     borderBottomColor: grey1,
-    borderBottomWidth: 0.7
-  },
-  image: {
-    borderRadius: 15,
-    height: size,
-    marginRight: 20,
-    width: size
+    borderBottomWidth: 1
   },
   name: {
-    fontSize: 15
+    fontSize: 15,
+    marginLeft: 10
   },
   message: {
     color: grey2,
     flex: 1,
-    fontSize: 13
+    fontSize: 13,
+    fontWeight: 'normal',
+    marginLeft: 10
+  },
+  listItem: {
+    borderBottomWidth: 0,
+    marginBottom: 10,
+    marginTop: 10
   }
 });
