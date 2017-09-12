@@ -41,3 +41,5 @@ exports.groups = [
     id: 2
   }
 ];
+
+exports.searchIcon = 'http://www.daemconcepcion.cl/images/iconos/lupa.png';

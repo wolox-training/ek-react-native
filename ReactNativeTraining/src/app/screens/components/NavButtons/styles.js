@@ -1,17 +1,12 @@
 import { StyleSheet } from 'react-native';
 
-import { green, lightBlue, white } from '../../utils/colors';
+import { green, white } from '../../../../utils/colors';
 
 const imageSize = 34;
 
 export default StyleSheet.create({
   container: {
-    alignSelf: 'flex-end',
-    position: 'relative',
-    flexDirection: 'row',
-    right: -20,
-    top: 20,
-    zIndex: 10
+    flexDirection: 'row'
   },
   search: {
     backgroundColor: green,
@@ -23,8 +18,6 @@ export default StyleSheet.create({
   },
   add: {
     alignItems: 'center',
-    backgroundColor: lightBlue,
-    borderRadius: 30,
     height: 34,
     justifyContent: 'center',
     width: 34

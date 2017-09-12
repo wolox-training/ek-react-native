@@ -1,7 +1,5 @@
-import React from 'react';
+import Home from './src/app/screens/home/index';
 
-import Navigator from './src/app/screens/Navigator';
-
-const App = () => <Navigator />;
+const App = Home;
 
 export default App;

@@ -1,8 +1,9 @@
-import React, { PropTypes, Component } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { FlatList, View } from 'react-native';
 import { List, ListItem } from 'react-native-elements';
 
-import styles from './ContactList.style';
+import styles from './styles';
 
 export default class ContactList extends Component {
   separatorComponent = () => <View style={styles.greyLine} />;
@@ -21,14 +22,16 @@ export default class ContactList extends Component {
 
   render() {
     return (
-      <List containerStyle={styles.container}>
-        <FlatList
-          ItemSeparatorComponent={this.separatorComponent}
-          data={this.props.data}
-          keyExtractor={item => item.id}
-          renderItem={({ item }) => this.renderItem(item)}
-        />
-      </List>
+      <View style={styles.container}>
+        <List containerStyle={styles.listContainer}>
+          <FlatList
+            ItemSeparatorComponent={this.separatorComponent}
+            data={this.props.data}
+            keyExtractor={item => item.id}
+            renderItem={({ item }) => this.renderItem(item)}
+          />
+        </List>
+      </View>
     );
   }
 }
