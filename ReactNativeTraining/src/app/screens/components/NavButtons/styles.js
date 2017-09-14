@@ -18,9 +18,9 @@ export default StyleSheet.create({
   },
   add: {
     alignItems: 'center',
-    height: 34,
+    height: imageSize,
     justifyContent: 'center',
-    width: 34
+    width: imageSize
   },
   text: {
     color: white

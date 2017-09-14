@@ -7,7 +7,7 @@ import NavigationOptions from './styles';
 const Home = StackNavigator({
   Home: {
     screen: Navigator,
-    navigationOptions: NavigationOptions.headerStyle()
+    navigationOptions: NavigationOptions.headerStyle
   }
 });
 
