@@ -1,10 +1,10 @@
-import React from 'react';
+import { connect } from 'react-redux';
 
-import data from '../../../../../utils/constants';
-import ContactList from '../../../components/ContactList/index';
+import Groups from './layout';
 
-function Groups() {
-  return <ContactList data={data.groups} />;
-}
+const mapStateToProps = state => ({
+  groups: state.groups,
+  messages: state.messages.filter(message => message.groupId !== undefined)
+});
 
-export default Groups;
+export default connect(mapStateToProps)(Groups);

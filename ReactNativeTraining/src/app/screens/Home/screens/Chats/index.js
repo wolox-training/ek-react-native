@@ -1,10 +1,15 @@
-import React from 'react';
+import { connect } from 'react-redux';
 
-import data from '../../../../../utils/constants';
-import ContactList from '../../../components/ContactList/index';
+import Chats from './layout';
 
-function Chats() {
-  return <ContactList data={data.contacts} />;
-}
+const mapStateToProps = state => ({
+  messages: state.messages.filter(message => message.receiverId !== undefined),
+  contacts: state.contacts.filter(
+    contact =>
+      state.messages.some(message => message.senderId === contact.id || message.receiverId === contact.id) &&
+      contact.id !== 1
+  ),
+  currentUserId: 1
+});
 
-export default Chats;
+export default connect(mapStateToProps)(Chats);

@@ -1,10 +1,13 @@
-import React from 'react';
+import { connect } from 'react-redux';
 
-import data from '../../../../../utils/constants';
-import ContactList from '../../../components/ContactList/index';
+import Contacts from './layout';
 
-function Contacts() {
-  return <ContactList data={data.contacts} />;
-}
+const mapStateToProps = state => ({
+  contacts: state.contacts.map(contact => ({
+    id: contact.id,
+    name: contact.username,
+    avatar: contact.avatar
+  }))
+});
 
-export default Contacts;
+export default connect(mapStateToProps)(Contacts);

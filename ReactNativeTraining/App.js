@@ -1,5 +1,14 @@
-import Home from './src/app/screens/Home/index';
+import React from 'react';
+import { Provider } from 'react-redux';
 
-const App = Home;
+import './src/config/ReactotronConfig';
+import store from './src/redux/index';
+import AppNavigator from './src/app/screens/components/AppNavigator';
+
+const App = () => (
+  <Provider store={store}>
+    <AppNavigator />
+  </Provider>
+);
 
 export default App;
