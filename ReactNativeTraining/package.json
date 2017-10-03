@@ -22,10 +22,8 @@
     "ios": "react-native run-ios",
     "test": "node node_modules/jest/bin/jest.js --watch",
     "android:clean": "cd android/ && ./gradlew clean",
-    "android:build":
-      "cd android && ./gradlew clean && ./gradlew assembleRelease",
-    "android:install":
-      "cd android && ./gradlew clean && ./gradlew assembleRelease && ./gradlew installRelease",
+    "android:build": "cd android && ./gradlew clean && ./gradlew assembleRelease",
+    "android:install": "cd android && ./gradlew clean && ./gradlew assembleRelease && ./gradlew installRelease",
     "lint": "eslint src",
     "lint-fix": "eslint src --fix"
   },
@@ -49,9 +47,12 @@
     "reactotron-react-native": "^1.12.3",
     "reactotron-redux": "^1.12.2",
     "redux": "^3.7.2",
-    "redux-thunk": "^2.2.0"
+    "redux-thunk": "^2.2.0",
+    "reselect": "^3.0.1"
   },
   "rnpm": {
-    "assets": ["src/app/assets/fonts/Montserrat"]
+    "assets": [
+      "src/app/assets/fonts/Montserrat"
+    ]
   }
 }

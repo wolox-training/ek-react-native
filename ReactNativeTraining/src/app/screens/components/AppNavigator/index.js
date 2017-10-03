@@ -5,10 +5,11 @@ import PropTypes from 'prop-types';
 
 import Home from '../../Home';
 import loadData from '../../../../redux/appNavigator/actions';
+import { currentUserId } from '../../../../utils/constants';
 
 class AppNavigator extends React.Component {
   componentWillMount() {
-    this.props.dispatch(loadData(1));
+    this.props.dispatch(loadData(currentUserId));
   }
 
   render() {
@@ -18,8 +19,7 @@ class AppNavigator extends React.Component {
 }
 
 AppNavigator.propTypes = {
-  nav: PropTypes.any, // eslint-disable-line react/forbid-prop-types
-  load: PropTypes.func
+  nav: PropTypes.any // eslint-disable-line react/forbid-prop-types
 };
 
 const mapStateToProps = store => ({ nav: store.nav });
