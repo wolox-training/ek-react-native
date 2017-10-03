@@ -12,6 +12,7 @@ export default class ContactList extends Component {
       hideChevron
       roundAvatar
       avatar={item.avatar}
+      onPress={() => this.props.onClick(item)}
       title={item.name}
       titleStyle={styles.name}
       style={styles.listItem}
@@ -44,5 +45,6 @@ ContactList.propTypes = {
       image: PropTypes.string,
       message: PropTypes.string
     })
-  )
+  ),
+  onClick: PropTypes.func
 };

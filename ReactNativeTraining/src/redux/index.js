@@ -4,7 +4,7 @@ import thunk from 'redux-thunk';
 
 import Navigator from '../app/screens/Home';
 
-import { messages, groups, contacts } from './appNavigator/reducer';
+import { messages, groups, contacts, chat } from './appNavigator/reducer';
 
 const nav = (state, action) => Navigator.router.getStateForAction(action, state) || state;
 
@@ -12,6 +12,7 @@ const reducers = combineReducers({
   messages,
   groups,
   contacts,
+  chat,
   nav
 });
 

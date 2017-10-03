@@ -6,4 +6,6 @@ const loadData = id => dispatch => {
   contacts().then(response => dispatch({ type: 'LOAD_CONTACTS', payload: response.data }));
 };
 
+export const chatSelected = id => dispatch => dispatch({ type: 'CHAT_SELECTED', payload: id });
+
 export default loadData;

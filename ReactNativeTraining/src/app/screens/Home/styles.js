@@ -13,6 +13,18 @@ const NavigationOptions = {
       color: white
     },
     title: 'WChats'
+  }),
+  chatHeaderStyle: () => ({
+    headerStyle: {
+      backgroundColor: lightBlue,
+      elevation: 0,
+      height: 70,
+      paddingTop: 20,
+      paddingRight: 10
+    },
+    headerTitleStyle: {
+      color: white
+    }
   })
 };
 
