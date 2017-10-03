@@ -12,7 +12,7 @@ export default class ContactList extends Component {
       hideChevron
       roundAvatar
       avatar={item.avatar}
-      title={item.username}
+      title={item.name}
       titleStyle={styles.name}
       style={styles.listItem}
       subtitle={item.message}

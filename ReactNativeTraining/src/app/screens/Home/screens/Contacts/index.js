@@ -1,10 +1,24 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
+import { connect } from 'react-redux';
 
-import data from '../../../../../utils/constants';
-import ContactList from '../../../components/ContactList/index';
+import { contactsFromCurrentUser } from '../selectors';
 
-function Contacts() {
-  return <ContactList data={data.contacts} />;
-}
+import Contacts from './layout';
 
-export default Contacts;
+const mapStateToProps = state => ({
+  contacts: contactsFromCurrentUser(state)
+});
+
+const ContactsContainer = ({ contacts }) => <Contacts contacts={contacts} />;
+
+ContactsContainer.propTypes = {
+  contacts: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number,
+      username: PropTypes.string,
+      avatar: PropTypes.string
+    })
+  )
+};
+
+export default connect(mapStateToProps)(ContactsContainer);

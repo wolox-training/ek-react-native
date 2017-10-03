@@ -1,10 +1,25 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
+import { connect } from 'react-redux';
 
-import data from '../../../../../utils/constants';
-import ContactList from '../../../components/ContactList/index';
+import { groupsFromCurrentUser } from '../selectors';
 
-function Groups() {
-  return <ContactList data={data.groups} />;
-}
+import Groups from './layout';
 
-export default Groups;
+const mapStateToProps = state => ({
+  groups: groupsFromCurrentUser(state)
+});
+
+const GroupsContainer = ({ groups }) => <Groups groups={groups} />;
+
+GroupsContainer.propTypes = {
+  groups: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number,
+      username: PropTypes.string,
+      avatar: PropTypes.string,
+      message: PropTypes.string
+    })
+  )
+};
+
+export default connect(mapStateToProps)(GroupsContainer);

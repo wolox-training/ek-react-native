@@ -1,10 +1,25 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
+import { connect } from 'react-redux';
 
-import data from '../../../../../utils/constants';
-import ContactList from '../../../components/ContactList/index';
+import { chatsFromCurrentUser } from '../selectors';
 
-function Chats() {
-  return <ContactList data={data.contacts} />;
-}
+import Chats from './layout';
 
-export default Chats;
+const mapStateToProps = state => ({
+  chats: chatsFromCurrentUser(state)
+});
+
+const ChatsContainer = ({ chats }) => <Chats chats={chats} />;
+
+ChatsContainer.propTypes = {
+  chats: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number,
+      username: PropTypes.string,
+      avatar: PropTypes.string,
+      message: PropTypes.string
+    })
+  )
+};
+
+export default connect(mapStateToProps)(ChatsContainer);
