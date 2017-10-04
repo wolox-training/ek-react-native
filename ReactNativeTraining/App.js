@@ -3,7 +3,7 @@ import { Provider } from 'react-redux';
 
 import './src/config/ReactotronConfig';
 import store from './src/redux/index';
-import AppNavigator from './src/app/screens/components/AppNavigator';
+import AppNavigator from './src/AppNavigator';
 
 const App = () => (
   <Provider store={store}>

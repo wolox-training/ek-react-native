@@ -2,7 +2,7 @@ import { createStore, applyMiddleware, compose, combineReducers } from 'redux';
 import Reactotron from 'reactotron-react-native';
 import thunk from 'redux-thunk';
 
-import Navigator from '../app/screens/Home';
+import Navigator from '../Navigator';
 
 import { messages } from './messages/reducer';
 import { groups } from './groups/reducer';
