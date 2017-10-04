@@ -1,13 +1,14 @@
 import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
 
-import { chatsBetweenTwoContacts } from '../../../selectors';
+import { chatsBetweenTwoContacts } from '../../Home/screens/selectors';
+import { currentUserId } from '../../../../utils/constants';
 
 import Chat from './layout';
 
 const mapStateToProps = state => ({
   messages: chatsBetweenTwoContacts(state),
-  currentUserId: 1,
+  userId: currentUserId,
   contact: state.chat
 });
 
@@ -17,8 +18,8 @@ class ChatContainer extends React.Component {
   });
 
   render() {
-    const { messages, currentUserId } = this.props;
-    return <Chat messages={messages} currentUserId={currentUserId} />;
+    const { messages, userId } = this.props;
+    return <Chat messages={messages} currentUserId={userId} />;
   }
 }
 
@@ -30,7 +31,7 @@ ChatContainer.propTypes = {
       senderId: PropTypes.number
     })
   ),
-  currentUserId: PropTypes.number
+  userId: PropTypes.number
 };
 
 export default connect(mapStateToProps)(ChatContainer);

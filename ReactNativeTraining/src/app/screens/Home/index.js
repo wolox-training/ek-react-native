@@ -1,9 +1,9 @@
 import { StackNavigator } from 'react-navigation';
 
 import Navigator from '../components/Navigator';
+import Chat from '../components/Chat';
 
 import NavigationOptions from './styles';
-import Chat from './screens/Chats/screens/Chat';
 
 const Home = StackNavigator({
   Home: {

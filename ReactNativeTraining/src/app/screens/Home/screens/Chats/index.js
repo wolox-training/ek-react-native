@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { NavigationActions } from 'react-navigation';
 
 import { chatsFromCurrentUser } from '../selectors';
-import { chatSelected } from '../../../../../redux/appNavigator/actions';
+import { chatSelected } from '../../../../../redux/chat/actions';
 
 import Chats from './layout';
 

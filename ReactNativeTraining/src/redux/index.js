@@ -4,7 +4,10 @@ import thunk from 'redux-thunk';
 
 import Navigator from '../app/screens/Home';
 
-import { messages, groups, contacts, chat } from './appNavigator/reducer';
+import { messages } from './messages/reducer';
+import { groups } from './groups/reducer';
+import { contacts } from './contacts/reducer';
+import { chat } from './chat/reducer';
 
 const nav = (state, action) => Navigator.router.getStateForAction(action, state) || state;
 

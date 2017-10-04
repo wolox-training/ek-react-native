@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react';
 import { FlatList, View } from 'react-native';
 
-import Message from '../../components/Message/index';
+import Message from '../Message/index';
 
 import styles from './styles';
 
