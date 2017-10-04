@@ -7,11 +7,15 @@ import styles from './styles';
 
 export default class ContactList extends Component {
   separatorComponent = () => <View style={styles.greyLine} />;
+
+  handlePress = item => this.props.onClick(item);
+
   renderItem = item => (
     <ListItem
       hideChevron
       roundAvatar
       avatar={item.avatar}
+      onPress={() => this.handlePress(item)}
       title={item.name}
       titleStyle={styles.name}
       style={styles.listItem}
@@ -44,5 +48,6 @@ ContactList.propTypes = {
       image: PropTypes.string,
       message: PropTypes.string
     })
-  )
+  ),
+  onClick: PropTypes.func
 };

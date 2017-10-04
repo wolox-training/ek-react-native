@@ -18,6 +18,10 @@ const getContactsFromCurrentUser = state =>
       ) && contact.id !== currentUserId
   );
 
+const getCurrentUserId = () => 1;
+
+const getChatContact = state => state.chat;
+
 const isAMessageBetween = (userId, contactId, message) =>
   (message.senderId === userId && message.receiverId === contactId) ||
   (message.receiverId === userId && message.senderId === contactId);
@@ -53,4 +57,9 @@ export const contactsFromCurrentUser = createSelector([getContactsFromCurrentUse
     name: contact.username,
     avatar: contact.avatar
   }))
+);
+
+export const chatsBetweenTwoContacts = createSelector(
+  [getContactMessages, getCurrentUserId, getChatContact],
+  (messages, userId, contact) => messages.filter(message => isAMessageBetween(userId, contact.id, message))
 );

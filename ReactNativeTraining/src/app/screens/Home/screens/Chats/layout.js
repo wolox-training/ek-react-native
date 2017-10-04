@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react';
 
 import ContactList from '../../../components/ContactList';
 
-const Chats = data => <ContactList data={data.chats} />;
+const Chats = data => <ContactList data={data.chats} onClick={data.onClick} />;
 
 Chats.propTypes = {
   data: PropTypes.arrayOf(
