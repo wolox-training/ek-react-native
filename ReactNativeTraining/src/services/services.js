@@ -9,3 +9,5 @@ export const messages = async () => api.get(`/messages`);
 export const senderMessages = async id => api.get(`/messages?senderId=${id}`);
 
 export const receiverMessages = async id => api.get(`/messages?receiverId=${id}`);
+
+export const sendMessage = async body => api.post('/messages', body);

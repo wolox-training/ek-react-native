@@ -14,7 +14,6 @@ const mapStateToProps = state => ({
 class ChatsContainer extends React.Component {
   handleOnClick = contact => {
     this.props.dispatch(chatSelected(contact));
-    // this.props.dispatch(getMessagesFromSelected(contact));
     this.props.dispatch(
       NavigationActions.navigate({
         routeName: 'Chat',

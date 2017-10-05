@@ -1,11 +1,11 @@
 export const chat = (state = [], action) => {
   switch (action.type) {
     case 'CHAT_SELECTED':
-      return { senderId: action.payload, groupId: null };
+      return { receiverId: action.payload.id, groupId: null };
     case 'GROUP_SELECTED':
-      return { groupId: action.payload, senderId: null };
+      return { receiverId: null, groupId: action.payload.id };
     case 'CONTACT_SELECTED':
-      return { senderId: action.payload, groupId: null };
+      return { receiverId: action.payload.id, groupId: null };
     default:
       return state;
   }
