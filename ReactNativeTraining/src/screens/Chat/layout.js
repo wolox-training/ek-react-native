@@ -2,7 +2,9 @@ import React, { PropTypes } from 'react';
 
 import Conversation from '../components/Conversation/index';
 
-const Chat = data => <Conversation messages={data.messages} currentUserId={data.currentUserId} />;
+const Chat = data => (
+  <Conversation messages={data.messages} currentUserId={data.currentUserId} onClick={data.onClick} />
+);
 
 Chat.propTypes = {
   messages: PropTypes.arrayOf(
@@ -13,7 +15,8 @@ Chat.propTypes = {
       message: PropTypes.string
     })
   ),
-  currentUserId: PropTypes.number
+  currentUserId: PropTypes.number,
+  onClick: PropTypes.func
 };
 
 export default Chat;

@@ -64,9 +64,9 @@ export const contactsFromCurrentUser = createSelector([getContacts], contacts =>
 export const messagesBetweenTwoContacts = createSelector(
   [getContactMessages, getCurrentUserId, getChatContact],
   (messages, userId, contact) =>
-    messages.filter(message => isAMessageBetween(userId, contact.senderId.id, message))
+    messages.filter(message => isAMessageBetween(userId, contact.receiverId, message))
 );
 
 export const groupMessages = createSelector([getGroupMessages, getChatContact], (messages, group) =>
-  messages.filter(message => isAMessageFromGroup(group.groupId.id, message))
+  messages.filter(message => isAMessageFromGroup(group.groupId, message))
 );
