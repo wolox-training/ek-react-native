@@ -8,20 +8,23 @@ import { DARK_GREY } from '../../../constants';
 
 import styles from './styles.js';
 
-const Item = ({ item, onPress, onRemove }) =>
-  <View style={[styles.container, item.checked && styles.checked]}>
-    <Text>{item.name}</Text>
-    <View style={styles.buttonsContainer}>
-      <CheckBox
-        containerStyle={styles.checkbox}
-        checked={item.checked}
-        onPress={onPress}
-        checkedIcon='square'
-        checkedColor={DARK_GREY}
-      />
-      <Cross onPress={onRemove} checked={item.checked}/>
+function Item ({ item, onPress, onRemove }) {
+  return (
+    <View style={[styles.container, item.checked && styles.checked]}>
+      <Text>{item.name}</Text>
+      <View style={styles.buttonsContainer}>
+        <CheckBox
+          containerStyle={styles.checkbox}
+          checked={item.checked}
+          onPress={onPress}
+          checkedIcon='square'
+          checkedColor={DARK_GREY}
+        />
+        <Cross onPress={onRemove} checked={item.checked}/>
+      </View>
     </View>
-  </View>;
+  )
+};
 
 Item.defaultProps = {
  item: {

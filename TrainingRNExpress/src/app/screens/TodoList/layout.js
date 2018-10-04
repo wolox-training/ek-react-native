@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { View, Button, Text, TouchableOpacity, TextInput, FlatList } from 'react-native';
 
@@ -7,43 +7,38 @@ import { RED } from '../../../constants';
 import Item from '../../components/Item';
 import styles from './styles.js';
 
-const TodoList = ({
-  items,
-  newItem,
-  onChangeText,
-  onCreateItem,
-  onItemPress,
-  onItemRemove,
-  cleanItems
-}) => {
-  const renderItem = ({ item, index }) =>
+class TodoList extends Component {
+  renderItem = ({ item, index }) =>
     <Item
       item={item}
-      onPress={() => onItemPress(index)}
-      onRemove={() => onItemRemove(index)}
+      onPress={() => this.props.onItemPress(index)}
+      onRemove={() => this.props.onItemRemove(index)}
     />
 
-  const keyExtractor = (_, index) => index.toString();
+  keyExtractor = (_, index) => index.toString();
 
-  return (
-    <View style={styles.container}>
-      <TextInput
-        style={styles.input}
-        onChangeText={onChangeText}
-        value={newItem}
-        onBlur={onCreateItem}
-        placeholder={TEXT_PLACEHOLDER}
-      />
-      <FlatList
-        data={items}
-        renderItem={renderItem}
-        keyExtractor={keyExtractor}
-      />
-      <TouchableOpacity onPress={cleanItems}>
-        <Text style={styles.button}>{BUTTON_LABEL}</Text>
-      </TouchableOpacity>
-    </View>
-  )
+  render() {
+    const { items, newItem, onChangeText, onCreateItem, cleanItems } = this.props;
+    return (
+      <View style={styles.container}>
+        <TextInput
+          style={styles.input}
+          onChangeText={onChangeText}
+          value={newItem}
+          onBlur={onCreateItem}
+          placeholder={TEXT_PLACEHOLDER}
+        />
+        <FlatList
+          data={items}
+          renderItem={this.renderItem}
+          keyExtractor={this.keyExtractor}
+        />
+        <TouchableOpacity onPress={cleanItems}>
+          <Text style={styles.button}>{BUTTON_LABEL}</Text>
+        </TouchableOpacity>
+      </View>
+    );
+  }
 };
 
 TodoList.defaultProps = {

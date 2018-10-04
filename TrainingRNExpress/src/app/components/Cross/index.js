@@ -5,14 +5,17 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 
 import { RED, GREY, WHITE } from '../../../constants';
 
-const Cross = ({ onPress, checked }) =>
-  <Icon.Button
-    name='times'
-    color={RED}
-    backgroundColor={checked ? GREY : WHITE}
-    size={20}
-    onPress={onPress}
-  />
+function Cross ({ onPress, checked }) {
+  return (
+    <Icon.Button
+      name='times'
+      color={RED}
+      backgroundColor={checked ? GREY : WHITE}
+      size={20}
+      onPress={onPress}
+    />
+  )
+}
 
 Cross.propTypes = {
   onPress: PropTypes.func.isRequired,
