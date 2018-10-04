@@ -10,6 +10,8 @@ class TodoList extends Component {
     newItem: ''
   }
 
+  static navigationOptions = { title: 'Todo List' };
+
   handleChangeText = text => this.setState({ newItem: text });
 
   handleCreateItem = () =>
