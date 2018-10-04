@@ -1,10 +1,11 @@
 import { StyleSheet } from 'react-native';
 
-import { RED, GREY } from '../../../constants';
+import { RED, GREY, WHITE } from '../../../constants';
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: WHITE
   },
   input: {
     borderBottomWidth: 1,
