@@ -9,7 +9,7 @@ class BooksList extends Component {
 
   render() {
     return (
-      <BooksListLayout books={BOOKS} />
+      <BooksListLayout books={BOOKS} navigation={this.props.navigation} />
     )
   }
 }

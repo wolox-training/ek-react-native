@@ -6,7 +6,13 @@ import Book from '../../components/Book';
 
 class BooksList extends Component {
   renderItem = ({ item, index }) =>
-    <Book image={item.image_url} title={item.title} author={item.author} />
+    <Book
+      id={item.id}
+      image={item.image_url}
+      title={item.title}
+      author={item.author}
+      navigation={this.props.navigation}
+    />
 
   keyExtractor = (_, index) => index.toString();
 

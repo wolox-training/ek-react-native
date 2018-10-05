@@ -1,20 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { View, Text, Image } from 'react-native';
+import { View, Text, Image, TouchableOpacity } from 'react-native';
 
 import { RED, PLACEHOLDER_IMAGE } from '../../../constants';
 
 import styles from './styles.js';
 
-function Book({ image, title, author }) {
+function Book({ id, image, title, author, navigation }) {
   return (
-    <View style={styles.container}>
+    <TouchableOpacity style={styles.container} onPress={() => navigation.navigate('Book', { id })}>
       <Image source={{ uri: image || PLACEHOLDER_IMAGE }} style={styles.icon} borderRadius={25} />
       <View style={styles.textContainer}>
         <Text style={styles.title}>{title}</Text>
         <Text style={styles.author}>{author}</Text>
       </View>
-    </View>
+    </TouchableOpacity>
   )
 }
 
