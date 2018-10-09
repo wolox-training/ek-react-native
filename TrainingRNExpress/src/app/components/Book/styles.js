@@ -2,6 +2,8 @@ import { StyleSheet } from 'react-native';
 
 import { GREY, WHITE, DARK_GREY } from '../../../constants';
 
+const ICON_SIZE = 50;
+
 const styles = StyleSheet.create({
   container: {
     backgroundColor: WHITE,
@@ -14,8 +16,8 @@ const styles = StyleSheet.create({
   },
   icon: {
     marginRight: 20,
-    height: 50,
-    width: 50
+    height: ICON_SIZE,
+    width: ICON_SIZE
   },
   title: {
     color: DARK_GREY,
