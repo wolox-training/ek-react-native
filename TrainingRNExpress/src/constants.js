@@ -5,6 +5,15 @@ export const ITEMS = [
   { name: 'Eat breakfast', checked: false }
 ];
 
+export const ROUTES = {
+  HOME: 'home',
+  BOOK: 'book'
+}
+
+export const TITLES = {
+  HOME: 'Home'
+}
+
 export const RED = '#B20000';
 export const GREY = '#F8F8F8';
 export const DARK_GREY = '#696969';

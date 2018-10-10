@@ -2,21 +2,17 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Text, View } from 'react-native';
 
-import { BOOKS } from '../../../constants';
 import { FIELDS } from './strings';
 
 import styles from './styles.js';
 
 class BookDetails extends Component {
-  state = { book: {}}
-
-  componentDidMount() {
-    const id = this.props.navigation.state.params.id;
-    this.setState({ book: BOOKS.find(book => book.id === id) })
-  }
+  state = {
+    book: this.props.navigation.getParam('book')
+  };
 
   static navigationOptions = ({ navigation }) => ({
-    title: BOOKS.find(book => book.id === navigation.state.params.id).title
+    title: navigation.getParam('book').title
   })
 
   render () {
