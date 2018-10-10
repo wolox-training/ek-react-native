@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
-import { View } from 'react-native';
+
+import { BOOKS } from '../../../constants';
+
+import BooksListLayout from './layout';
 
 class BooksList extends Component {
   static navigationOptions = { title: 'Book List' };
 
   render() {
     return (
-      <View />
+      <BooksListLayout books={BOOKS} />
     )
   }
 }
