@@ -1,21 +1,32 @@
 import React, { Component } from 'react';
 import { createStackNavigator } from 'react-navigation';
 
-import { RED, WHITE } from './src/constants';
+import { ROUTES, TITLES, RED, WHITE } from './src/constants';
 
 import TabNavigator from './src/app/screens/TabNavigator';
+import BookDetails from './src/app/screens/BookDetails';
 
 const App = createStackNavigator({
-  Home: {
+  [ROUTES.HOME]: {
     screen: TabNavigator,
     navigationOptions: () => ({
-     title: 'Home',
-     headerStyle: {
-       backgroundColor: RED,
-       borderBottomWidth: 0
-     },
-     headerTintColor: WHITE
-   }),
+      title: TITLES.HOME,
+      headerStyle: {
+        backgroundColor: RED,
+        borderBottomWidth: 0
+      },
+      headerTintColor: WHITE
+    }),
+  },
+  [ROUTES.BOOK]: {
+    screen: BookDetails,
+    navigationOptions: () => ({
+      headerStyle: {
+        backgroundColor: RED,
+        borderBottomWidth: 0
+      },
+      headerTintColor: WHITE
+    })
   }
 });
 
